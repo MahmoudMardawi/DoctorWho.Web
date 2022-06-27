@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWho.Web", "DoctorWho.Web\DoctorWho.Web.csproj", "{6B7DEE26-294E-4393-B772-EFF589461BA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B7DEE26-294E-4393-B772-EFF589461BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B7DEE26-294E-4393-B772-EFF589461BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B7DEE26-294E-4393-B772-EFF589461BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B7DEE26-294E-4393-B772-EFF589461BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62AAD319-3324-4C2F-901C-D11C2F002392}
+	EndGlobalSection
+EndGlobal
