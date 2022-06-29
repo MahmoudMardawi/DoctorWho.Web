@@ -13,9 +13,9 @@ namespace DoctorWho.Db.Domain.Entites
         public int EpisodeId { get; set; }
         public int SeriesNumber { get; set; }
         public int EpisodeNumber { get; set; }
-        public string EpisodeType { get; set; }
-        public string Title { get; set; }
-        public string? Notes { get; set; }
+        public string EpisodeType { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string Notes { get; set; } = string.Empty;
         public DateTime EpisodeDate { get; set; }
       
     }

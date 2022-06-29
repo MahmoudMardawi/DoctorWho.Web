@@ -8,7 +8,7 @@ namespace DoctorWho.Db.Domain.Entites
 {
     public class ThreeMostFrequentlyAppearingCompanionsDto
     {
-        public string _ThreeMostFrequentlyAppearingCompanions { get; set; }
+        public string _ThreeMostFrequentlyAppearingCompanions { get; set; } = string.Empty;
 
     }
 }

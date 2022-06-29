@@ -11,7 +11,7 @@ namespace DoctorWho.Db.Domain.Entites
    
 
         public int EnemyId { get; set; }
-        public string EnemyName { get; set; }
-        public string? Description { get; set; } 
+        public string EnemyName { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
     }
 }

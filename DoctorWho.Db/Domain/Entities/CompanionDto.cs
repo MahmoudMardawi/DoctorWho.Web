@@ -9,7 +9,7 @@ namespace DoctorWho.Db.Domain.Entites
     public class CompanionDto
     {
         public int CompanionId { get; set; }
-        public string CompanionName { get; set; }
-        public string WhoPlayed { get; set; }
+        public string CompanionName { get; set; } = string.Empty;
+        public string WhoPlayed { get; set; } = string.Empty;
     }
 }

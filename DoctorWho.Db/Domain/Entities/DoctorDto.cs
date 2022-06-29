@@ -11,7 +11,7 @@ namespace DoctorWho.Db.Domain.Entites
     public class DoctorDto
     {  
         public int DoctorId { get; set; }
-        public string DoctorName { get; set; }
+        public string DoctorName { get; set; } = string.Empty;
         public int DoctorNumber { get; set; }
         public DateTime? BirthDate { get; set; }
         public DateTime? FirstEpisodeDate { get; set; }
