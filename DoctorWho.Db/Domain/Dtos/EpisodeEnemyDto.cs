@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DoctorWho.Db.Domain.Entites
+namespace DoctorWho.Db.Domain.Dtos
 {
     public class EpisodeEnemyDto
     {
