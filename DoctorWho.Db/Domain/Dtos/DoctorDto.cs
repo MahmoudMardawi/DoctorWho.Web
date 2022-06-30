@@ -15,6 +15,5 @@ namespace DoctorWho.Db.Domain.Dtos
         public DateTime? BirthDate { get; set; }
         public DateTime? FirstEpisodeDate { get; set; }
         public DateTime? LastEpisodeDate { get; set; }
-      
     }
 }

@@ -8,8 +8,13 @@ namespace DoctorWho.Db.Domain.Dtos
 {
     public class CompanionDto
     {
+        public CompanionDto()
+        {
+            EpisodeCompanions = new List<EpisodeCompanionDto>();
+        }
         public int CompanionId { get; set; }
         public string CompanionName { get; set; } = string.Empty;
         public string WhoPlayed { get; set; } = string.Empty;
+        public ICollection<EpisodeCompanionDto> EpisodeCompanions { get; set; } 
     }
 }

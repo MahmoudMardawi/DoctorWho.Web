@@ -9,7 +9,6 @@ namespace DoctorWho.Db.Domain.Dtos
 {
     public class EpisodeCompanionDto
     {
-        public int EpisodeCompanionId { get; set; }
         public ICollection<EpisodeDto> Episodes { get; set; }
         public ICollection<CompanionDto> Companions { get; set; }
 

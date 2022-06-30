@@ -10,15 +10,13 @@ namespace DoctorWho.Db.Domain.Dtos
     public class EpisodeDto
     {
 
-        public EpisodeDto(ICollection<DoctorDto> doctors, ICollection<AuthorDto> authors,
-          ICollection<EpisodeEnemyDto> episodeEnemies, ICollection<EpisodeCompanionDto> episodeCompanions)
+        public EpisodeDto()
         {
-            Doctors = doctors;
-            Authors = authors;
-            EpisodeEnemies = episodeEnemies;
-            EpisodeCompanions = episodeCompanions;
+            Doctors = new List<DoctorDto>();
+            Authors = new List<AuthorDto>();
+            EpisodeEnemies = new List<EpisodeEnemyDto>();
+            EpisodeCompanions = new List<EpisodeCompanionDto>();
         }
-        public int EpisodeId { get; set; }
         public int SeriesNumber { get; set; }
         public int EpisodeNumber { get; set; }
         public string EpisodeType { get; set; } = string.Empty;
