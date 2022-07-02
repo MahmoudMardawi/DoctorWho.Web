@@ -16,7 +16,7 @@ namespace DoctorWho.Db.Domain.Dtos
         public int EnemyId { get; set; }
         public string EnemyName { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public ICollection<EpisodeEnemyDto> EpisodeEnemies { get; set; }
+        public List<EpisodeEnemyDto> EpisodeEnemies { get; set; }
 
     }
 }

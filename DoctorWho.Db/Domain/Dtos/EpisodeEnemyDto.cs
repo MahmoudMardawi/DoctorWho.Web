@@ -10,12 +10,12 @@ namespace DoctorWho.Db.Domain.Dtos
     public class EpisodeEnemyDto
     {
         public int EpisodeEnemyId { get; set; }
-        public ICollection<EpisodeDto> Episodes { get; set; }
-        public ICollection<EnemyDto> Enemies { get; set; }
-        public EpisodeEnemyDto(ICollection<EpisodeDto> episodes, ICollection<EnemyDto> enemies)
+        public List<EpisodeDto> Episodes { get; set; }
+        public List<EnemyDto> Enemies { get; set; }
+        public EpisodeEnemyDto()
         {
-              Enemies = enemies;
-            Episodes = episodes;
+              Enemies = new List<EnemyDto>();
+              Episodes = new List<EpisodeDto>();
         }
 
     }

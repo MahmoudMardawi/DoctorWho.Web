@@ -23,10 +23,10 @@ namespace DoctorWho.Db.Domain.Dtos
         public string Title { get; set; } = string.Empty;
         public string Notes { get; set; } = string.Empty;
         public DateTime EpisodeDate { get; set; }
-        public ICollection<DoctorDto> Doctors { get; set; }
-        public ICollection<AuthorDto> Authors { get; set; }
-        public ICollection<EpisodeEnemyDto> EpisodeEnemies { get; set; }
-        public ICollection<EpisodeCompanionDto> EpisodeCompanions { get; set; }
+        public List<DoctorDto> Doctors { get; set; }
+        public List<AuthorDto> Authors { get; set; }
+        public List<EpisodeEnemyDto> EpisodeEnemies { get; set; }
+        public List<EpisodeCompanionDto> EpisodeCompanions { get; set; }
       
     }
 }

@@ -9,13 +9,14 @@ namespace DoctorWho.Db.Domain.Dtos
 {
     public class EpisodeCompanionDto
     {
-        public ICollection<EpisodeDto> Episodes { get; set; }
-        public ICollection<CompanionDto> Companions { get; set; }
+        public int EpisodeCompanionId { get; set; }
+        public List<EpisodeDto> Episodes { get; set; }
+        public List<CompanionDto> Companions { get; set; }
 
-        public EpisodeCompanionDto(ICollection<EpisodeDto> episodes,ICollection<CompanionDto> companions)
+        public EpisodeCompanionDto()
         {
-            Companions = companions;
-            Episodes = episodes;
+            Companions = new List<CompanionDto>();
+            Episodes = new List<EpisodeDto>();
         }
     }
 }
