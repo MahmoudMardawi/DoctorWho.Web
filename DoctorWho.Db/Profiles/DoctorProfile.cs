@@ -9,7 +9,7 @@ using DoctorWho.Db.Domain.Models;
 
 namespace DoctorWho.Db.Profiles
 {
-    internal class DoctorProfile : Profile
+    public class DoctorProfile : Profile
     {
         public DoctorProfile()
         {
