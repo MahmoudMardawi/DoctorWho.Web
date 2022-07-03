@@ -41,7 +41,7 @@ namespace DoctorWho.Db.Contexts
             if (!dbContextOptionsBuilder.IsConfigured)
             {
                 dbContextOptionsBuilder.
-         UseSqlServer(@"Data Source=SPECTRUM\SQLEXPRESS;Initial Catalog=DoctorWhoCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+         UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DoctorWhoWeb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
                 .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
                     .EnableSensitiveDataLogging(true);
             }
