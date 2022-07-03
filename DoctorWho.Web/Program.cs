@@ -4,6 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using FluentValidation.AspNetCore;
 using System.Reflection;
+using Microsoft.Extensions.Configuration;
+using AutoMapper;
+using DoctorWho.Db.Domain.Dtos;
+using DoctorWho.Db.Profiles;
+using DoctorWho.Db.Domain.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,18 +17,31 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers().AddFluentValidation(c => c.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly()));
+builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DoctorWhoCoreDbContext>(options =>
-{
-    options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DoctorWhoCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+IConfiguration configuration = new ConfigurationBuilder()
+   .AddJsonFile("appsettings.json", true,true)
+   .Build();
+
+
+builder.Services.AddMvc();
+builder.Services.AddAutoMapper(typeof(DoctorWhoCoreDbContext));
+var mapperConfig = new MapperConfiguration(mc => {
+    mc.AddProfile(new DoctorProfile());
 });
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
-builder.Services.AddAutoMapper(typeof(Program));
+string myDb1ConnectionString = configuration.GetConnectionString("myDb1");
+
+
+builder.Services.AddDbContext<DoctorWhoCoreDbContext>(options => options
+.UseSqlServer(myDb1ConnectionString));
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -32,21 +50,15 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-void ConfigureServices(IServiceCollection services)
-{
-    services.AddHealthChecks();
-
-    app?.UseAuthorization();
-    app?.MapControllers();
-
-}
-
-app.Run();
-
-
+app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
 
 app.Run();
